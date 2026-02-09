@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Eunoia Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; scroll-behavior: smooth; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-purple-eunoia { background-color: #5317a1; }
+        .text-purple-eunoia { color: #5317a1; }
+        .bg-yellow-eunoia { background-color: #ffd800; }
+        .text-yellow-eunoia { color: #ffd800; }
+        .border-purple-eunoia { border-color: #5317a1; }
+
+        /* Animación personalizada para el texto del header */
+        @keyframes reveal {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .reveal-text {
+            display: inline-block;
+            animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        /* Efecto de flotación sutil para elementos decorativos */
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(-10px, -20px); }
+            100% { transform: translate(0, 0); }
+        }
+        .animate-float { animation: float 10s ease-in-out infinite; }
+    </style>
+</head>
+
+<body class="text-gray-900 overflow-x-hidden">
+
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-50 transition-all duration-500">
+        <div class="text-2xl font-serif font-bold tracking-tighter text-purple-eunoia">
+            <img src="logo.png" alt="Eunoia" class="w-full h-8 object-contain hover:scale-110 transition-transform">
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest text-purple-eunoia">
+            <a href="index.html" class="hover:text-yellow-eunoia transition-colors">Home</a>
+            <a href="about.html" class="underline font-bold">Nosotros</a>
+            <a href="services.html" class="hover:text-yellow-eunoia transition-colors">Servicios</a>
+            <a href="contact.html" class="hover:text-yellow-eunoia transition-colors">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="px-6 md:px-24 py-32 md:py-48 border-b border-black">
+        <div class="max-w-6xl overflow-hidden">
+            <span class="text-purple-eunoia uppercase tracking-[0.3em] text-xs font-bold mb-6 block reveal-text" style="animation-delay: 0.1s;">Sobre Nosotros</span>
+            <h1 class="font-serif text-5xl md:text-8xl leading-none mb-10 reveal-text" style="animation-delay: 0.3s;">
+                Pensamiento <span class="italic text-purple-eunoia">estratégico</span> con intención <span class="italic text-yellow-eunoia underline decoration-purple-eunoia">creativa.</span>
+            </h1>
+        </div>
+    </header>
+
+    <section class="grid md:grid-cols-2 gap-0 border-b border-black">
+        <div class="p-6 md:p-24 bg-purple-eunoia text-white flex flex-col justify-center overflow-hidden" data-aos="fade-right">
+            <span class="font-serif text-8xl md:text-[12rem] opacity-20 leading-none mb-4 inline-block hover:scale-105 transition-transform duration-700 cursor-default">ευνοια</span>
+            <h2 class="font-serif text-4xl md:text-5xl mb-8 italic" data-aos="fade-up" data-aos-delay="200">Eunoia (del griego): buena mente, pensamiento bello.</h2>
+            <p class="text-xl opacity-90 leading-relaxed max-w-md" data-aos="fade-up" data-aos-delay="400">
+                En retórica, representa la conexión genuina entre quien comunica y quien escucha; en medicina, un estado de calma mental. Esa dualidad define nuestra forma de trabajar.
+            </p>
+        </div>
+        <div class="p-6 md:p-24 bg-white flex flex-col justify-center border-l border-black" data-aos="fade-left">
+            <p class="text-2xl md:text-4xl font-light leading-relaxed mb-8">
+                Somos una agencia de marketing y comunicación enfocada en crear estrategias <span class="font-bold text-purple-eunoia">claras, creativas y medibles.</span>
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="300">
+                Unimos análisis de datos, creatividad y tecnología para construir marcas sólidas, coherentes y relevantes en un entorno digital cada vez más competitivo.
+            </p>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-24 py-24 bg-yellow-eunoia border-b border-black relative overflow-hidden">
+        <div class="max-w-4xl relative z-10" data-aos="zoom-in-up">
+            <h3 class="font-serif text-5xl md:text-7xl mb-8 italic">Nuestra Filosofía</h3>
+            <p class="text-2xl md:text-4xl leading-tight text-purple-eunoia">
+                Creemos que la verdadera magia del marketing solo funciona cuando el mensaje es entendido. Por eso, cada idea creativa está respaldada por una estrategia que la sostiene, la ordena y la convierte en resultados.
+            </p>
+        </div>
+        <div class="absolute right-[-5%] bottom-[-10%] font-serif text-[30vw] opacity-10 select-none pointer-events-none animate-float">
+            IDEAS
+        </div>
+    </section>
+
+    <section class="px-6 md:px-24 py-24 bg-[#fcfaf7]">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
+            <h3 class="font-serif text-5xl md:text-7xl italic">Para quiénes <br> trabajamos</h3>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="group border-t-2 border-black pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#5317a1]" data-aos="fade-up" data-aos-delay="100">
+                <span class="font-serif text-4xl italic text-purple-eunoia block mb-4 group-hover:scale-110 transition-transform origin-left">01</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Marcas con visión</h4>
+                <p class="text-gray-600">Empresas que valoran la estrategia y la creatividad como el motor principal de su crecimiento.</p>
+            </div>
+            <div class="group border-t-2 border-black pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="200">
+                <span class="font-serif text-4xl italic text-purple-eunoia block mb-4 group-hover:scale-110 transition-transform origin-left">02</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Buscadores de autenticidad</h4>
+                <p class="text-gray-600">Marcas que buscan diferenciarse de forma genuina, rechazando las copias y las fórmulas genéricas.</p>
+            </div>
+            <div class="group border-t-2 border-black pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#5317a1]" data-aos="fade-up" data-aos-delay="300">
+                <span class="font-serif text-4xl italic text-purple-eunoia block mb-4 group-hover:scale-110 transition-transform origin-left">03</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Inversores estratégicos</h4>
+                <p class="text-gray-600">Negocios que entienden el marketing como una inversión de retorno, no simplemente como un gasto operativo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-purple-eunoia py-32 px-6 border-y border-black overflow-hidden relative">
+        <div class="max-w-7xl mx-auto text-center relative z-10" data-aos="zoom-in">
+            <p class="font-serif text-3xl md:text-5xl text-white leading-none tracking-tighter">
+                “La creatividad sin estrategia es <span class="text-yellow-eunoia italic hover:text-white transition-colors cursor-default">solo ruido.</span> <br class="hidden md:block"> 
+                La estrategia sin creatividad <span class="underline decoration-yellow-eunoia decoration-4 underline-offset-8">no conecta</span>.”
+            </p>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none flex items-center justify-center">
+            <div class="font-serif text-[40vw] text-white rotate-12 animate-float">Eunoia</div>
+        </div>
+    </section>
+
+    <section class="relative bg-white py-32 px-6 text-center overflow-hidden">
+        <div class="relative z-10" data-aos="fade-up">
+            <h2 class="font-serif text-4xl md:text-6xl mb-6 text-purple-eunoia italic uppercase tracking-tighter hover:scale-105 transition-transform duration-500">¿Hacemos algo bello?</h2>
+            <p class="text-xl md:text-2xl mb-12 text-gray-600 max-w-2xl mx-auto">Diseñemos una estrategia alineada a tus objetivos.</p>
+            <a href="mailto:hola@eunoia.com"
+                class="bg-yellow-eunoia text-purple-eunoia px-12 py-5 rounded-full font-bold text-lg uppercase border-2 border-black shadow-[8px_8px_0px_0px_rgba(83,23,161,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all inline-block">
+                Iniciar Proyecto
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-purple-eunoia py-12 px-6 text-center">
+        <p class="text-white/50 text-xs uppercase tracking-widest font-bold">© 2026 Eunoia Agency • Estrategia • Creatividad • Datos</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+
+        // Efecto del Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/10', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/10', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/kursor"></script>
+<script>
+    new kursor({
+        type: 1,
+        removeDefaultCursor: true
+    })
+</script>
+</body>
+</html>

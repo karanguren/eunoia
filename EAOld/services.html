@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Eunoia Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-purple-eunoia { background-color: #5317a1; }
+        .text-purple-eunoia { color: #5317a1; }
+        .bg-yellow-eunoia { background-color: #ffd800; }
+        .text-yellow-eunoia { color: #ffd800; }
+        .border-purple-eunoia { border-color: #5317a1; }
+        
+        /* Efecto de elevación Neobrutalista */
+        .neo-card {
+            transition: all 0.2s ease;
+        }
+        .neo-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px 0px #5317a1;
+        }
+    </style>
+</head>
+
+<body class="text-gray-900 overflow-x-hidden">
+
+     <nav
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-50 transition-all duration-300">
+        <div class="text-2xl font-serif font-bold tracking-tighter text-purple-eunoia">
+            <img src="logo2.png" alt="Eunoia" class="w-full h-8 object-contain">
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest text-yellow-eunoia">
+            <a href="index2.html" class="hover:underline">Home</a>
+            <a href="about.html" class="hover:underline">Nosotros</a>
+            <a href="services.html" class="hover:underline">Servicios</a>
+            <a href="contact.html" class="underline font-bold">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="px-6 md:px-24 py-20 bg-purple-eunoia text-white border-b-2 border-black">
+        <div class="max-w-5xl mt-4">
+            <span class="text-yellow-eunoia uppercase tracking-[0.3em] text-xs font-bold mb-6 block">Capabilities</span>
+            <h1 class="font-serif text-5xl md:text-8xl leading-none">
+                Marketing diseñado para crecer con <span class="italic text-yellow-eunoia">datos</span> y <span class="italic">creatividad.</span>
+            </h1>
+        </div>
+    </header>
+
+    <section class="px-6 md:px-24 py-24 space-y-32">
+        
+        <div class="grid md:grid-cols-12 gap-10 items-start">
+            <div class="md:col-span-4 sticky top-24">
+                <span class="font-serif text-8xl text-purple-eunoia italic opacity-10">01</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-[-40px]">Estrategia de Crecimiento y Datos</h2>
+            </div>
+            <div class="md:col-span-8 grid md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card">
+                    <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Data Analytics & BI</h4>
+                    <p class="text-gray-600 text-sm">Analizamos el comportamiento real de tus usuarios para tomar decisiones basadas en datos, no en suposiciones. Métricas claras e insights accionables.</p>
+                </div>
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card">
+                    <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Customer Journey Mapping</h4>
+                    <p class="text-gray-600 text-sm">Diseñamos y optimizamos todo el recorrido del cliente: desde el primer impacto hasta la fidelización.</p>
+                </div>
+                <div class="bg-yellow-eunoia border-2 border-black p-8 rounded-2xl col-span-full">
+                    <h4 class="font-bold text-xl mb-2">Auditorías Digitales</h4>
+                    <p class="font-medium">Evaluamos tu presencia para detectar fugas de clientes y puntos críticos de rendimiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-10 items-start">
+            <div class="md:col-span-4 sticky top-24 md:order-2">
+                <span class="font-serif text-8xl text-purple-eunoia italic opacity-10">02</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-[-40px]">Contenidos y Social Media</h2>
+            </div>
+            <div class="md:col-span-8 grid md:grid-cols-2 gap-6 md:order-1">
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card">
+                    <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Content Factory</h4>
+                    <p class="text-gray-600 text-sm">Producción estratégica para TikTok, Reels y Shorts. Contenido ágil, relevante y alineado a tendencias.</p>
+                </div>
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card">
+                    <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Marketing de Influencers</h4>
+                    <p class="text-gray-600 text-sm">Colaboraciones con creadores que conectan auténticamente con tu nicho y objetivos.</p>
+                </div>
+                <div class="bg-purple-eunoia text-white p-8 rounded-2xl col-span-full border-2 border-black shadow-[8px_8px_0px_0px_#ffd800]">
+                    <h4 class="font-bold text-xl mb-2">Community Management Proactivo</h4>
+                    <p class="opacity-80">Gestión enfocada en atención al cliente, reputación y social listening para anticiparnos al mercado.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-20 border-y-2 border-black text-center">
+            <p class="font-serif text-3xl md:text-6xl italic leading-tight">
+                Estrategia que se <span class="bg-yellow-eunoia px-2">piensa.</span><br>
+                Creatividad que se <span class="text-purple-eunoia underline">siente.</span><br>
+                Resultados que se <span class="font-bold">miden.</span>
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-10 items-start">
+            <div class="md:col-span-4 sticky top-24">
+                <span class="font-serif text-8xl text-purple-eunoia italic opacity-10">03</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-[-40px]">Publicidad Digital (Performance)</h2>
+            </div>
+            <div class="md:col-span-8 space-y-6">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1 bg-white border-2 border-black p-8 rounded-2xl neo-card">
+                        <h4 class="font-bold text-xl mb-2">SEM & Social Ads</h4>
+                        <p class="text-gray-500 text-sm">Google, Meta, TikTok y LinkedIn optimizados para ventas reales y leads calificados.</p>
+                    </div>
+                    <div class="flex-1 bg-white border-2 border-black p-8 rounded-2xl neo-card">
+                        <h4 class="font-bold text-xl mb-2">Programática</h4>
+                        <p class="text-gray-500 text-sm">Impactamos al usuario correcto en el momento adecuado según su comportamiento.</p>
+                    </div>
+                </div>
+                <div class="bg-white border-2 border-black p-6 rounded-2xl flex items-center justify-between group hover:bg-purple-eunoia hover:text-white transition-colors">
+                    <span class="font-bold uppercase tracking-widest">Retargeting Estratégico</span>
+                    <span class="text-2xl group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="bg-white border-2 border-black p-10 rounded-[2.5rem] shadow-[10px_10px_0px_0px_#5317a1]">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-purple-eunoia block mb-4">04. Experiencia y Desarrollo</span>
+                <h3 class="font-serif text-4xl mb-6">UX/UI & SEO</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> <strong>Diseño Web/Apps:</strong> Plataformas intuitivas y orientadas a conversión.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> <strong>CRO:</strong> Análisis de fricción para aumentar resultados.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> <strong>SEO:</strong> Posicionamiento orgánico sostenible.</li>
+                </ul>
+            </div>
+            <div class="bg-purple-eunoia text-white p-10 rounded-[2.5rem] border-2 border-black shadow-[10px_10px_0px_0px_#ffd800]">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-yellow-eunoia block mb-4">05. Nuevas Tecnologías</span>
+                <h3 class="font-serif text-4xl mb-6 italic">Automatización & IA</h3>
+                <ul class="space-y-4 opacity-90">
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> <strong>IA Generativa:</strong> Personalización de campañas y escalabilidad de contenido.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> <strong>Marketing Automation:</strong> Email y flujos basados en acciones reales.</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bg-white py-24 px-6 text-center border-t-2 border-black">
+        <h2 class="font-serif text-5xl md:text-8xl mb-8 text-purple-eunoia italic uppercase tracking-tighter">¿Listo para escalar?</h2>
+        <p class="text-xl mb-12 text-gray-500 max-w-xl mx-auto">Selecciona el servicio que tu marca necesita hoy y diseñemos el plan para mañana.</p>
+        <a href="#" class="bg-yellow-eunoia text-purple-eunoia px-12 py-5 rounded-full font-bold text-lg uppercase border-2 border-black shadow-[6px_6px_0px_0px_rgba(83,23,161,1)] hover:scale-105 transition-transform inline-block">
+            Ver Planes de Trabajo
+        </a>
+    </section>
+
+    <footer class="bg-purple-eunoia py-8 px-6 text-center text-white/30 text-xs uppercase tracking-[0.2em] font-bold">
+        <p class="text-white/50 text-xs uppercase tracking-widest font-bold">© 2026 Eunoia Agency • Estrategia • Creatividad • Datos</p>
+    </footer>
+
+</body>
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/5', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/5', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+    </script>
+</html>

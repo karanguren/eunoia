@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eunoia Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-33.33%);
+            }
+        }
+
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 25s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-purple-eunoia {
+            background-color: #5317a1;
+        }
+
+        .text-purple-eunoia {
+            color: #5317a1;
+        }
+
+        .bg-yellow-eunoia {
+            background-color: #ffd800;
+        }
+
+        .text-yellow-eunoia {
+            color: #ffd800;
+        }
+
+        .border-yellow-eunoia {
+            border-color: #ffd800;
+        }
+
+        .border-purple-eunoia {
+            border-color: #5317a1;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        /* Hover para pilares */
+        .group:hover h4 {
+            color: #5317a1 !important;
+        }
+
+        .group:hover p {
+            color: #4b5563 !important;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fcfaf7] text-gray-900 overflow-x-hidden custom-cursor">
+    <nav
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-50 transition-all duration-500">
+        <div class="text-2xl font-serif font-bold tracking-tighter text-purple-eunoia">
+            <img src="logo.png" alt="Eunoia" class="w-full h-8 object-contain hover:scale-110 transition-transform">
+        </div>
+        <div class="hidden md:flex items-center space-x-8 font-medium text-sm uppercase tracking-widest text-white">
+            <a href="index.html" class="hover:text-yellow-eunoia transition-colors relative group">Home
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-eunoia transition-all group-hover:w-full"></span>
+            </a>
+            <a href="about.html" class="hover:text-yellow-eunoia transition-colors relative group">Nosotros
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-eunoia transition-all group-hover:w-full"></span>
+            </a>
+            <a href="services.html" class="hover:text-yellow-eunoia transition-colors relative group">Servicios
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-eunoia transition-all group-hover:w-full"></span>
+            </a>
+            <a href="contact.html" class="font-bold hover:text-yellow-eunoia transition-colors">Contacto</a>
+            <div class="relative ml-4">
+                <button id="lang-toggle" class="flex items-center space-x-2 hover:text-yellow-eunoia transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                    </svg>
+                    <span id="current-lang">ES</span>
+                </button>
+            </div>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-purple-eunoia focus:outline-none z-50">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-purple-eunoia z-40 flex-col items-center justify-center space-y-8 text-center">
+        <a href="index.html" class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">Home</a>
+        <a href="about.html" class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">Nosotros</a>
+        <a href="services.html" class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">Servicios</a>
+        <a href="contact.html" class="text-yellow-eunoia text-2xl font-bold uppercase tracking-widest">Contacto</a>
+        <button id="mobile-lang-toggle" class="text-white text-xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+            </svg>
+            <span id="mobile-current-lang">ES</span>
+        </button>
+    </div>
+
+    <section class="relative h-screen w-full flex flex-col items-center justify-start text-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full -z-10">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+                alt="Hero background" class="w-full h-full object-cover brightness-[0.7]">
+        </div>
+
+        <div class="max-w-5xl relative z-30 px-6 mt-[20vh] md:mt-[25vh]">
+            <h1 class="font-serif text-4xl md:text-7xl leading-[1.1] mb-6 text-white drop-shadow-lg">
+                Estrategia, creatividad y datos para marcas que quieren ir <span
+                    class="italic text-yellow-eunoia inline-block hover:rotate-2 transition-transform">más
+                    allá.</span>
+            </h1>
+
+            <p class="text-white text-sm md:text-lg max-w-3xl mx-auto mb-10 opacity-90 leading-relaxed drop-shadow-md">
+                En Eunoia Agency combinamos pensamiento estratégico, creatividad y análisis de datos para transformar
+                ideas en resultados reales. Diseñamos comunicación clara, experiencias memorables y estrategias que
+                conectan desde el primer contacto hasta la conversión.
+            </p>
+        </div>
+
+        <div class="absolute bottom-[-10px] left-0 w-full h-40 md:h-64 pointer-events-none z-20">
+            <div
+                class="absolute top-0 left-[-10%] w-[120%] -rotate-[3deg] bg-yellow-eunoia border-y-2 border-yellow-eunoia py-3 overflow-hidden whitespace-nowrap shadow-xl z-20">
+                <div
+                    class="flex animate-marquee space-x-8 uppercase font-bold text-xl italic text-purple-eunoia tracking-tighter">
+                    <span>Pensamiento estratégico ✦ Creatividad con propósito ✦ Datos que guían ✦ Comunicación clara ✦
+                    </span>
+                    <span>Pensamiento estratégico ✦ Creatividad con propósito ✦ Datos que guían ✦ Comunicación clara ✦
+                    </span>
+                    <span>Pensamiento estratégico ✦ Creatividad con propósito ✦ Datos que guían ✦ Comunicación clara ✦
+                    </span>
+                </div>
+            </div>
+
+            <div
+                class="absolute top-12 md:top-20 left-[-10%] w-[120%] rotate-[4deg] bg-purple-eunoia border-y-2 border-purple-eunoia py-3 overflow-hidden whitespace-nowrap shadow-2xl z-10">
+                <div class="flex animate-marquee space-x-8 uppercase font-bold text-xl italic text-yellow-eunoia tracking-tighter"
+                    style="animation-direction: reverse; animation-duration: 35s;">
+                    <span>Eunoia Agency ✦ Estrategia y Resultados ✦ Pensamiento Bello ✦ Estrategia y Resultados ✦
+                    </span>
+                    <span>Eunoia Agency ✦ Estrategia y Resultados ✦ Pensamiento Bello ✦ Estrategia y Resultados ✦
+                    </span>
+                    <span>Eunoia Agency ✦ Estrategia y Resultados ✦ Pensamiento Bello ✦ Estrategia y Resultados ✦
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="grid md:grid-cols-2 gap-16 px-6 md:px-24 py-12 md:py-24 items-center relative z-10 bg-[#fcfaf7]">
+        <div>
+            <h2 class="font-serif text-5xl md:text-6xl leading-tight mb-8">
+                Eunoia nace del concepto de <span
+                    class="italic text-purple-eunoia underline decoration-yellow-eunoia">pensamiento
+                    bello</span>:
+            </h2>
+            <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>Una forma de entender el marketing desde la calma, la
+                    claridad y la intención. No creemos en la improvisación ni en las fórmulas vacías.</p>
+                <p class="font-semibold text-purple-eunoia italic">Creemos en estrategias bien pensadas, comunicación
+                    efectiva y decisiones basadas en datos.</p>
+                <p>Trabajamos con marcas que entienden el valor del marketing, que buscan diferenciarse y construir
+                    relaciones sólidas con sus audiencias.</p>
+            </div>
+        </div>
+
+        <div class="relative h-[450px] md:h-[550px]" data-aos="zoom-in-up">
+            <div class="absolute top-0 right-0 w-2/3 h-64 border-2 border-black rounded-3xl overflow-hidden shadow-2xl z-10 float-animation"
+                style="animation-delay: 0s;">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="absolute bottom-10 left-0 w-1/2 h-64 border-2 border-black rounded-3xl overflow-hidden shadow-2xl z-20 float-animation"
+                style="animation-delay: -3s;">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80"
+                    class="w-full h-full object-cover">
+            </div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-black rounded-full bg-yellow-eunoia flex items-center justify-center p-4 z-30 rotate-12">
+                <p class="text-purple-eunoia font-bold text-center text-xs uppercase">Estrategia más Creatividad
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-24 py-24 bg-purple-eunoia">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
+            <h3 class="font-serif text-5xl md:text-7xl italic text-white">Nuestros <br> <span class="text-yellow-eunoia">Pilares</span></h3>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-12">
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="100">
+                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">01</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Pensamiento estratégico</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Cada decisión respaldada por análisis y objetivos claros de crecimiento.</p>
+            </div>
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="200">
+                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">02</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Creatividad con propósito</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Ideas que conectan emocionalmente y generan resultados medibles.</p>
+            </div>
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="300">
+                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">03</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Datos que guían</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Métricas reales que optimizan cada acción y maximizan el ROI.</p>
+            </div>
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="400">
+                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">04</span>
+                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Comunicación clara</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Mensajes directos que conectan con tu audiencia de forma efectiva.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32 px-6 text-center overflow-hidden border-t border-white/10">
+
+        <img src="Eunoia.png" alt="Fondo abstracto agencia" class="absolute inset-0 w-full h-full object-covery z-0">
+
+        <div
+            class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none select-none font-serif text-[25vw] leading-none text-white font-bold z-0">
+            EUNOIA
+        </div>
+
+        <div class="relative z-10">
+            <h2 class="font-serif text-5xl md:text-8xl mb-6 text-purple-eunoia italic">Hablemos de tu marca</h2>
+            <p class="text-xl md:text-2xl mb-12 text-black opacity-90 max-w-2xl mx-auto">
+                Diseñemos una estrategia alineada a tus objetivos.
+            </p>
+            <a href="mailto:hola@eunoia.com"
+                class="bg-yellow-eunoia text-purple-eunoia px-12 py-5 rounded-full font-bold text-lg uppercase border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:scale-105 hover:shadow-[0px_0px_20px_5px_rgba(255,216,0,0.5)] transition-all inline-block">
+                Iniciar Proyecto
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-purple-eunoia py-8 px-6 text-center text-white/30 text-xs uppercase tracking-[0.2em] font-bold">
+        <p class="text-white/50 text-xs uppercase tracking-widest font-bold"> 2026 Eunoia Agency • Estrategia •
+            Creatividad • Datos</p>
+    </footer>
+
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: false,
+        mirror: true
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        const navLinks = nav.querySelectorAll('.hidden.md\\:flex a');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/10', 'py-4');
+            nav.classList.remove('py-6');
+            navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-purple-eunoia');
+            });
+        } else {
+            nav.classList.remove('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/10', 'py-4');
+            nav.classList.add('py-6');
+            navLinks.forEach(link => {
+                link.classList.remove('text-purple-eunoia');
+                link.classList.add('text-white');
+            });
+        }
+    });
+
+    // Language switcher
+    const langToggle = document.getElementById('lang-toggle');
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+    const currentLang = document.getElementById('current-lang');
+    const mobileCurrentLang = document.getElementById('mobile-current-lang');
+    
+    // Detectar idioma actual del archivo
+    const currentPage = window.location.pathname.split('/').pop();
+    const isEnglish = currentPage.includes('-en.html');
+    
+    // Actualizar texto del botón
+    if (isEnglish) {
+        currentLang.textContent = 'EN';
+        mobileCurrentLang.textContent = 'EN';
+    } else {
+        currentLang.textContent = 'ES';
+        mobileCurrentLang.textContent = 'ES';
+    }
+    
+    // Función para cambiar idioma
+    function switchLanguage() {
+        const currentPage = window.location.pathname.split('/').pop();
+        let newPage;
+        
+        if (currentPage.includes('-en.html')) {
+            // Cambiar de inglés a español
+            newPage = currentPage.replace('-en.html', '.html');
+        } else {
+            // Cambiar de español a inglés
+            newPage = currentPage.replace('.html', '-en.html');
+        }
+        
+        window.location.href = newPage;
+    }
+    
+    langToggle.addEventListener('click', switchLanguage);
+    mobileLangToggle.addEventListener('click', switchLanguage);
+</script>
+<script src="https://unpkg.com/kursor"></script>
+<script>
+    new kursor({
+        type: 1,
+        removeDefaultCursor: true
+    })
+</script>
+
+</html>
