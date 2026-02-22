@@ -7,16 +7,39 @@
     <title>Services | Eunoia Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fcfaf7; }
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .bg-purple-eunoia { background-color: #5317a1; }
-        .text-purple-eunoia { color: #5317a1; }
-        .bg-yellow-eunoia { background-color: #ffd800; }
-        .text-yellow-eunoia { color: #ffd800; }
-        .border-purple-eunoia { border-color: #5317a1; }
-        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfaf7;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-purple-eunoia {
+            background-color: #5317a1;
+        }
+
+        .text-purple-eunoia {
+            color: #5317a1;
+        }
+
+        .bg-yellow-eunoia {
+            background-color: #ffd800;
+        }
+
+        .text-yellow-eunoia {
+            color: #ffd800;
+        }
+
+        .border-purple-eunoia {
+            border-color: #5317a1;
+        }
+
         .mobile-menu {
             display: none;
         }
@@ -24,61 +47,83 @@
         .mobile-menu.active {
             display: flex;
         }
-        
+
         .neo-card {
             transition: all 0.2s ease;
         }
+
         .neo-card:hover {
             transform: translate(-4px, -4px);
             box-shadow: 12px 12px 0px 0px #5317a1;
         }
-        
+
         .group:hover h4 {
             color: #5317a1 !important;
         }
+
         .group:hover p {
             color: #4b5563 !important;
         }
     </style>
 </head>
 
-<body class="text-gray-900 overflow-x-hidden">
+<body class="text-gray-900 overflow-x-hidden custom-cursor">
 
-     <nav
-        class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-50 transition-all duration-300">
+    <nav
+        class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-10 py-6 z-50 transition-all duration-500">
         <div class="text-2xl font-serif font-bold tracking-tighter text-purple-eunoia">
-            <img src="logo2.png" alt="Eunoia" class="w-full h-8 object-contain">
+            <img src="logow.png" alt="Eunoia" class="w-full h-8 object-contain hover:scale-110 transition-transform">
         </div>
         <div class="hidden md:flex items-center space-x-8 font-medium text-sm uppercase tracking-widest text-white">
-            <a href="index-en.html" class="hover:underline">Home</a>
-            <a href="about-en.html" class="hover:underline">About</a>
-            <a href="services-en.html" class="underline font-bold">Services</a>
-            <a href="contact-en.html" class="hover:underline">Contact</a>
+            <a href="index-en.html" class="hover:text-yellow-eunoia transition-colors relative group">Home
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-eunoia transition-all group-hover:w-full"></span>
+            </a>
+            <a href="about-en.html" class="hover:text-yellow-eunoia transition-colors relative group">About
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-eunoia transition-all group-hover:w-full"></span>
+            </a>
+            <a href="services-en.html" class="hover:text-yellow-eunoia transition-colors relative group">Services
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-eunoia transition-all group-hover:w-full"></span>
+            </a>
+            <a href="contact-en.html" class="font-bold hover:text-yellow-eunoia transition-colors">Contact</a>
             <div class="relative ml-4">
                 <button id="lang-toggle" class="flex items-center space-x-2 hover:text-yellow-eunoia transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                        </path>
                     </svg>
                     <span id="current-lang">EN</span>
                 </button>
             </div>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-purple-eunoia focus:outline-none z-50">
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none z-50">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                <path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+                <path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
     </nav>
 
-    <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-purple-eunoia z-40 flex-col items-center justify-center space-y-8 text-center">
-        <a href="index-en.html" class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">Home</a>
-        <a href="about-en.html" class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">About</a>
-        <a href="services-en.html" class="text-yellow-eunoia text-2xl font-bold uppercase tracking-widest">Services</a>
+    <div id="mobile-menu"
+        class="mobile-menu fixed inset-0 bg-purple-eunoia z-40 flex-col items-center justify-center space-y-8 text-center">
+        <a href="index-en.html"
+            class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">Home</a>
+        <a href="about-en.html"
+            class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">About</a>
+        <a href="services-en.html"
+            class="text-yellow-eunoia text-2xl font-bold uppercase tracking-widest">Services</a>
         <a href="contact-en.html" class="text-white text-2xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors">Contact</a>
-        <button id="mobile-lang-toggle" class="text-white text-xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors flex items-center space-x-2">
+        <button id="mobile-lang-toggle"
+            class="text-white text-xl font-medium uppercase tracking-widest hover:text-yellow-eunoia transition-colors flex items-center space-x-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                </path>
             </svg>
             <span id="mobile-current-lang">EN</span>
         </button>
@@ -87,30 +132,37 @@
     <header class="px-6 md:px-24 py-20 bg-purple-eunoia text-white border-b-2 border-black">
         <div class="max-w-5xl mt-4">
             <h1 class="font-serif text-5xl md:text-8xl leading-none" data-aos="fade-up" data-aos-delay="200">
-                Marketing designed to grow with <span class="italic text-yellow-eunoia">data</span> and <span class="italic">creativity.</span>
+                Marketing designed to grow with <span class="italic text-yellow-eunoia">data</span> and <span
+                    class="italic">creativity.</span>
             </h1>
         </div>
     </header>
 
     <section class="px-6 md:px-24 py-24 space-y-32">
-        
+
         <div class="grid md:grid-cols-12 gap-10 items-start" data-aos="fade-up">
             <div class="md:col-span-4 sticky top-24" data-aos="fade-right">
                 <span class="font-serif text-8xl text-purple-eunoia italic opacity-10">01</span>
                 <h2 class="font-serif text-4xl md:text-5xl font-bold mt-[-40px]">Growth Strategy and Data</h2>
             </div>
             <div class="md:col-span-8 grid md:grid-cols-2 gap-6">
-                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up"
+                    data-aos-delay="100">
                     <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Data Analytics & BI</h4>
-                    <p class="text-gray-600 text-sm">We analyze real user behavior to make data-driven decisions, not assumptions. Clear metrics and actionable insights.</p>
+                    <p class="text-gray-600 text-sm">We analyze real user behavior to make data-driven decisions, not
+                        assumptions. Clear metrics and actionable insights.</p>
                 </div>
-                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up"
+                    data-aos-delay="200">
                     <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Customer Journey Mapping</h4>
-                    <p class="text-gray-600 text-sm">We design and optimize the entire customer journey: from first impact to loyalty.</p>
+                    <p class="text-gray-600 text-sm">We design and optimize the entire customer journey: from first
+                        impact to loyalty.</p>
                 </div>
-                <div class="bg-yellow-eunoia border-2 border-black p-8 rounded-2xl col-span-full" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-yellow-eunoia border-2 border-black p-8 rounded-2xl col-span-full" data-aos="fade-up"
+                    data-aos-delay="300">
                     <h4 class="font-bold text-xl mb-2">Digital Audits</h4>
-                    <p class="font-medium">We evaluate your presence to detect customer leaks and critical performance points.</p>
+                    <p class="font-medium">We evaluate your presence to detect customer leaks and critical performance
+                        points.</p>
                 </div>
             </div>
         </div>
@@ -121,17 +173,23 @@
                 <h2 class="font-serif text-4xl md:text-5xl font-bold mt-[-40px]">Content and Social Media</h2>
             </div>
             <div class="md:col-span-8 grid md:grid-cols-2 gap-6 md:order-1">
-                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up"
+                    data-aos-delay="100">
                     <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Content Factory</h4>
-                    <p class="text-gray-600 text-sm">Strategic production for TikTok, Reels and Shorts. Agile, relevant content aligned with trends.</p>
+                    <p class="text-gray-600 text-sm">Strategic production for TikTok, Reels and Shorts. Agile, relevant
+                        content aligned with trends.</p>
                 </div>
-                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up"
+                    data-aos-delay="200">
                     <h4 class="font-bold text-xl mb-4 text-purple-eunoia">Influencer Marketing</h4>
-                    <p class="text-gray-600 text-sm">Collaborations with creators who authentically connect with your niche and objectives.</p>
+                    <p class="text-gray-600 text-sm">Collaborations with creators who authentically connect with your
+                        niche and objectives.</p>
                 </div>
-                <div class="bg-purple-eunoia text-white p-8 rounded-2xl col-span-full border-2 border-black shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-purple-eunoia text-white p-8 rounded-2xl col-span-full border-2 border-black shadow-[8px_8px_0px_0px_#ffd800]"
+                    data-aos="fade-up" data-aos-delay="300">
                     <h4 class="font-bold text-xl mb-2">Proactive Community Management</h4>
-                    <p class="opacity-80">Management focused on customer service, reputation and social listening to anticipate the market.</p>
+                    <p class="opacity-80">Management focused on customer service, reputation and social listening to
+                        anticipate the market.</p>
                 </div>
             </div>
         </div>
@@ -151,16 +209,21 @@
             </div>
             <div class="md:col-span-8 space-y-6">
                 <div class="flex flex-col md:flex-row gap-6">
-                    <div class="flex-1 bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex-1 bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up"
+                        data-aos-delay="100">
                         <h4 class="font-bold text-xl mb-2">SEM & Social Ads</h4>
-                        <p class="text-gray-500 text-sm">Google, Meta, TikTok and LinkedIn optimized for real sales and qualified leads.</p>
+                        <p class="text-gray-500 text-sm">Google, Meta, TikTok and LinkedIn optimized for real sales and
+                            qualified leads.</p>
                     </div>
-                    <div class="flex-1 bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex-1 bg-white border-2 border-black p-8 rounded-2xl neo-card" data-aos="fade-up"
+                        data-aos-delay="200">
                         <h4 class="font-bold text-xl mb-2">Programmatic</h4>
-                        <p class="text-gray-500 text-sm">We impact the right user at the right time based on their behavior.</p>
+                        <p class="text-gray-500 text-sm">We impact the right user at the right time based on their
+                            behavior.</p>
                     </div>
                 </div>
-                <div class="bg-white border-2 border-black p-6 rounded-2xl flex items-center justify-between group hover:bg-purple-eunoia hover:text-white transition-colors" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white border-2 border-black p-6 rounded-2xl flex items-center justify-between group hover:bg-purple-eunoia hover:text-white transition-colors"
+                    data-aos="fade-up" data-aos-delay="300">
                     <span class="font-bold uppercase tracking-widest">Strategic Retargeting</span>
                     <span class="text-2xl group-hover:translate-x-2 transition-transform">→</span>
                 </div>
@@ -168,21 +231,30 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-10">
-            <div class="bg-white border-2 border-black p-10 rounded-[2.5rem] shadow-[10px_10px_0px_0px_#5317a1]" data-aos="flip-left" data-aos-delay="100">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-purple-eunoia block mb-4">04. Experience and Development</span>
+            <div class="bg-white border-2 border-black p-10 rounded-[2.5rem] shadow-[10px_10px_0px_0px_#5317a1]"
+                data-aos="flip-left" data-aos-delay="100">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-purple-eunoia block mb-4">04. Experience
+                    and Development</span>
                 <h3 class="font-serif text-4xl mb-6">UX/UI & SEO</h3>
                 <ul class="space-y-4 text-gray-700">
-                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> Web/App Design: Intuitive platforms oriented to conversion.</li>
-                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> CRO: Friction analysis to increase results.</li>
-                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> SEO: Sustainable organic positioning.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> Web/App Design:
+                        Intuitive platforms oriented to conversion.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> CRO: Friction analysis
+                        to increase results.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> SEO: Sustainable organic
+                        positioning.</li>
                 </ul>
             </div>
-            <div class="bg-purple-eunoia text-white p-10 rounded-[2.5rem] border-2 border-black shadow-[10px_10px_0px_0px_#ffd800]" data-aos="flip-left" data-aos-delay="200">
-                <span class="text-xs font-bold uppercase tracking-[0.2em] text-yellow-eunoia block mb-4">05. New Technologies</span>
+            <div class="bg-purple-eunoia text-white p-10 rounded-[2.5rem] border-2 border-black shadow-[10px_10px_0px_0px_#ffd800]"
+                data-aos="flip-left" data-aos-delay="200">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-yellow-eunoia block mb-4">05. New
+                    Technologies</span>
                 <h3 class="font-serif text-4xl mb-6 italic">Automation & AI</h3>
                 <ul class="space-y-4 opacity-90">
-                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> Generative AI: Campaign personalization and content scalability.</li>
-                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> Marketing Automation: Email and flows based on real actions.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> Generative AI: Campaign
+                        personalization and content scalability.</li>
+                    <li class="flex items-start"><span class="mr-2 text-yellow-eunoia">✦</span> Marketing Automation:
+                        Email and flows based on real actions.</li>
                 </ul>
             </div>
         </div>
@@ -191,120 +263,177 @@
 
     <section class="px-6 md:px-24 py-24 bg-purple-eunoia">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
-            <h3 class="font-serif text-5xl md:text-7xl italic text-white">Our <br> <span class="text-yellow-eunoia">Pillars</span></h3>
+            <h3 class="font-serif text-5xl md:text-7xl italic text-white">Our <br> <span
+                    class="text-yellow-eunoia">Pillars</span></h3>
         </div>
 
         <div class="grid md:grid-cols-3 gap-12">
-            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="100">
-                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">01</span>
-                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Strategic Thinking</h4>
-                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Every decision backed by analysis and clear growth objectives.</p>
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]"
+                data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">01</span>
+                <h4
+                    class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">
+                    Strategic Thinking</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Every decision backed by analysis
+                    and clear growth objectives.</p>
             </div>
-            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="200">
-                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">02</span>
-                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Purposeful Creativity</h4>
-                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Ideas that connect emotionally and generate measurable results.</p>
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]"
+                data-aos="fade-up" data-aos-delay="200">
+                <span
+                    class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">02</span>
+                <h4
+                    class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">
+                    Purposeful Creativity</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Ideas that connect emotionally and
+                    generate measurable results.</p>
             </div>
-            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]" data-aos="fade-up" data-aos-delay="300">
-                <span class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">03</span>
-                <h4 class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">Data-Driven</h4>
-                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Real metrics that optimize every action and maximize ROI.</p>
+            <div class="group border-t-2 border-white pt-8 hover:bg-white p-4 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#ffd800]"
+                data-aos="fade-up" data-aos-delay="300">
+                <span
+                    class="font-serif text-4xl italic text-yellow-eunoia block mb-4 group-hover:scale-110 group-hover:text-purple-eunoia transition-all origin-left">03</span>
+                <h4
+                    class="text-xl font-bold uppercase mb-4 tracking-tight text-white group-hover:text-purple-eunoia transition-colors">
+                    Data-Driven</h4>
+                <p class="text-white/80 group-hover:text-gray-600 transition-colors">Real metrics that optimize every
+                    action and maximize ROI.</p>
             </div>
         </div>
     </section>
 
     <section class="bg-white py-24 px-6 text-center border-t-2 border-black">
-        <h2 class="font-serif text-5xl md:text-8xl mb-8 text-purple-eunoia italic uppercase tracking-tighter" data-aos="fade-up">Ready to scale?</h2>
-        <p class="text-xl mb-12 text-gray-500 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">Select the service your brand needs today and let's design the plan for tomorrow.</p>
-        <a href="#" class="bg-yellow-eunoia text-purple-eunoia px-12 py-5 rounded-full font-bold text-lg uppercase border-2 border-black shadow-[6px_6px_0px_0px_rgba(83,23,161,1)] hover:scale-105 transition-transform inline-block" data-aos="fade-up" data-aos-delay="300">
+        <h2 class="font-serif text-5xl md:text-8xl mb-8 text-purple-eunoia italic uppercase tracking-tighter"
+            data-aos="fade-up">Ready to scale?</h2>
+        <p class="text-xl mb-12 text-gray-500 max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="200">Select the
+            service your brand needs today and let's design the plan for tomorrow.</p>
+        <a href="#"
+            class="bg-yellow-eunoia text-purple-eunoia px-12 py-5 rounded-full font-bold text-lg uppercase border-2 border-black shadow-[6px_6px_0px_0px_rgba(83,23,161,1)] hover:scale-105 transition-transform inline-block"
+            data-aos="fade-up" data-aos-delay="300">
             View Work Plans
         </a>
     </section>
 
     <footer class="bg-purple-eunoia py-8 px-6 text-center text-white/30 text-xs uppercase tracking-[0.2em] font-bold">
-        <p class="text-white/50 text-xs uppercase tracking-widest font-bold"> 2026 Eunoia Agency • Strategy • Creativity • Data</p>
+        <p class="text-white/50 text-xs uppercase tracking-widest font-bold"> 2026 Eunoia Agency • Strategy • Creativity
+            • Data</p>
     </footer>
 
 </body>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: true
+    });
+</script>
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
         });
-    </script>
-    <script>
+    });
+
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        const navLogo = nav.querySelector('img');
+        const navLinks = nav.querySelectorAll('.hidden.md\\:flex a');
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const mobileLangToggleBtn = document.getElementById('mobile-lang-toggle');
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.querySelector('.menu-icon');
-        const closeIcon = document.querySelector('.close-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/10', 'py-4');
+            nav.classList.remove('py-6');
+            // Cambiar logo a la versión morada cuando hay scroll
+            if (navLogo) navLogo.src = 'logo.png';
+            navLinks.forEach(link => {
+                link.classList.remove('text-white');
+                link.classList.add('text-purple-eunoia');
             });
-        });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            const navLinks = nav.querySelectorAll('.hidden.md\\:flex a');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/5', 'py-4');
-                nav.classList.remove('py-6');
-                navLinks.forEach(link => {
-                    link.classList.remove('text-white');
-                    link.classList.add('text-purple-eunoia');
-                });
-            } else {
-                nav.classList.remove('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/5', 'py-4');
-                nav.classList.add('py-6');
-                navLinks.forEach(link => {
-                    link.classList.remove('text-purple-eunoia');
-                    link.classList.add('text-white');
-                });
+            // Cambiar color del botón de idioma a purple cuando hay scroll
+            if (langToggleBtn) {
+                langToggleBtn.classList.remove('text-white');
+                langToggleBtn.classList.add('text-purple-eunoia');
             }
-        });
-
-        // Language switcher
-        const langToggle = document.getElementById('lang-toggle');
-        const mobileLangToggle = document.getElementById('mobile-lang-toggle');
-        const currentLang = document.getElementById('current-lang');
-        const mobileCurrentLang = document.getElementById('mobile-current-lang');
-        
-        const currentPage = window.location.pathname.split('/').pop();
-        const isEnglish = currentPage.includes('-en.html');
-        
-        if (isEnglish) {
-            currentLang.textContent = 'EN';
-            mobileCurrentLang.textContent = 'EN';
+            // Cambiar color del botón de menú móvil a purple cuando hay scroll
+            if (mobileMenuBtn) {
+                mobileMenuBtn.classList.remove('text-white');
+                mobileMenuBtn.classList.add('text-purple-eunoia');
+            }
         } else {
-            currentLang.textContent = 'ES';
-            mobileCurrentLang.textContent = 'ES';
-        }
-        
-        function switchLanguage() {
-            const currentPage = window.location.pathname.split('/').pop();
-            let newPage;
-            
-            if (currentPage.includes('-en.html')) {
-                newPage = currentPage.replace('-en.html', '.html');
-            } else {
-                newPage = currentPage.replace('.html', '-en.html');
+            nav.classList.remove('bg-[#fcfaf7]/90', 'backdrop-blur-md', 'border-b', 'border-black/10', 'py-4');
+            nav.classList.add('py-6');
+            // Volver al logo blanco cuando está arriba
+            if (navLogo) navLogo.src = 'logow.png';
+            navLinks.forEach(link => {
+                link.classList.remove('text-purple-eunoia');
+                link.classList.add('text-white');
+            });
+            // Volver el botón de idioma a blanco cuando está arriba
+            if (langToggleBtn) {
+                langToggleBtn.classList.remove('text-purple-eunoia');
+                langToggleBtn.classList.add('text-white');
             }
-            
-            window.location.href = newPage;
+            // Volver el botón de menú móvil a blanco cuando está arriba
+            if (mobileMenuBtn) {
+                mobileMenuBtn.classList.remove('text-purple-eunoia');
+                mobileMenuBtn.classList.add('text-white');
+            }
         }
-        
-        langToggle.addEventListener('click', switchLanguage);
-        mobileLangToggle.addEventListener('click', switchLanguage);
-    </script>
+    });
+
+    // Language switcher
+    const langToggle = document.getElementById('lang-toggle');
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+    const currentLang = document.getElementById('current-lang');
+    const mobileCurrentLang = document.getElementById('mobile-current-lang');
+
+    const currentPage = window.location.pathname.split('/').pop();
+    const isEnglish = currentPage.includes('-en.html');
+
+    if (isEnglish) {
+        currentLang.textContent = 'EN';
+        mobileCurrentLang.textContent = 'EN';
+    } else {
+        currentLang.textContent = 'ES';
+        mobileCurrentLang.textContent = 'ES';
+    }
+
+    function switchLanguage() {
+        const currentPage = window.location.pathname.split('/').pop();
+        let newPage;
+
+        if (currentPage.includes('-en.html')) {
+            newPage = currentPage.replace('-en.html', '.html');
+        } else {
+            newPage = currentPage.replace('.html', '-en.html');
+        }
+
+        window.location.href = newPage;
+    }
+
+    langToggle.addEventListener('click', switchLanguage);
+    mobileLangToggle.addEventListener('click', switchLanguage);
+</script>
+<script src="https://unpkg.com/kursor"></script>
+<script>
+    new kursor({
+        type: 1,
+        removeDefaultCursor: true
+    })
+</script>
+
 </html>
